@@ -19,6 +19,6 @@ function doBitterSweet(from, to) {
   }
   console.log(str);
 }
-doBitterSweet(1, 2345);
+doBitterSweet(1, 10);
 
 // waar komt de v vandaag?
