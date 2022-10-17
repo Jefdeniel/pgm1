@@ -14,14 +14,12 @@ const bmi = (weight / height ** 2).toFixed(2);
 let msg = "";
 
 if (bmi <= 18.5) {
-  msg += "Jouw bmi is ${bmi}. Je hebt ondergewicht.";
+  msg += `Jouw bmi is ${bmi}. Je hebt ondergewicht.`;
 } else if (bmi > 18.5 && bmi < 25) {
-  msg += "Jouw bmi is ${bmi}. Je hebt het aanbevolen gewicht.";
+  msg += `Jouw bmi is ${bmi}. Je hebt het aanbevolen gewicht.`;
 } else if (bmi >= 25 && bmi > 30) {
-  msg += "Jouw bmi is ${bmi}. Je hebt het overgewicht.";
+  msg += `Jouw bmi is ${bmi}. Je hebt het overgewicht.`;
 } else {
-  msg += "Jouw bmi is ${bmi}. Je bent zwaarlijvig";
+  msg += `Jouw bmi is ${bmi}. Je bent zwaarlijvig`;
 }
 console.log(msg);
-
-//  Jouw bmi is ${bmi}. Je hebt ondergewicht". is uiteindelijke log. Fout zit ergens bij dollarteken
