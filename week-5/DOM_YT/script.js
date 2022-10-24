@@ -2,8 +2,10 @@
 
 // GetElementById()
 
-const title = document.GetElementById("main-heading");
+const title = document.getElementById("main-heading");
+
 console.log(title);
+
 // GetElementByClassName()
 
 // GetElementByTagName()
