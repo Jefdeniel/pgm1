@@ -1,3 +1,0 @@
-// dom manipulations
-
-// event listeners
