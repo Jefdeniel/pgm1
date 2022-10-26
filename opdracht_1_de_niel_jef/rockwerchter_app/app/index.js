@@ -97,17 +97,17 @@ const lineup = [
     isHeadliner: false,
     reviews: [
       {
-        rating: "9", 
+        rating: 9, 
         comment: "I finally watched The Mandalorian after putting it off for so long and I absolutely loved it! I don't consider myself to be a huge Star Wars superfan like some of these other fans out there but I am a regular fan that really enjoys watching the movies. I didn't even mind the latest trilogy, Rogue One and Solo more than most but The Mandalorian is without a doubt the best thing Star Wars related since the original trilogy.", 
         reviewedAt: "⭐⭐⭐⭐⭐⭐⭐⭐⭐",
       },
       {
-        rating: "7", 
+        rating: 7, 
         comment: "I've been a fan of Star Wars since I was a child in the 1980s. As such, I was very disappointed with Disney's latest trilogy. Thankfully, shows like the Mandalorian manage to steer well clear of the atrociousness that those three films are.", 
         reviewedAt: "⭐⭐⭐⭐⭐⭐⭐",
       },
       {
-        rating: "7", 
+        rating: 7, 
         comment: "Another good spin-off series in an everlasting run of them it seems now. I've always realized that the Star Wars franchise is puffed up and placed with \"baby bumpers\" to be extra kid friendly. But a prevailing criticism I have with the ever continuous series of comic book movies and series and the Star Wars franchise: If you're going to have such adult themes like battle, war and killing(sometimes with decapitation?!), show some blood every once in a while?? Any color blood. My god, I just don't understand why it isn't acceptable for these creators to show this dude killing multiples of people as a bounty hunter, then never show any of the blood that accompanies killing someone", 
         reviewedAt: "⭐⭐⭐⭐⭐⭐⭐",
       },
@@ -130,6 +130,55 @@ const lineup = [
     ],
   },
 ];
+
+const showLineupInConsole = () => {
+  return //hier dan alle verschillende functies
+}
+
+const getStringForLineup = () => {
+  return "Rock Werchter 2022";
+}
+
+const getStringForConcert = (concert) => {
+  return concert.band.name;
+}
+
+const getStringForHeadliner = () => {
+  if(isHeadliner = true) {
+    "HHHHHHHHHHHHHHHHHHHHHHHHHHEADLINERHHHHHHHHHHHHHHHHHHHHHHHHH"
+  }
+}
+
+// const d = new Date ("THU 30J")
+
+const getStringForDate = () => {
+  //const = new Date 
+
+}
+
+const getStringForSocials = () => {
+  return "––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––\nSocials\––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––\",  
+  
+}
+
+
+
+
+const getStringForReviews = (concert) => {
+  // Gemiddeldes berekenen voor reviews // 
+  const reviewRatings = concert.reviews.map(review => review.rating);
+  const averageReviewRatings = reviewRatings.reduce((a,b) => a + b, 0) / reviewRatings.length;
+  return averageReviewRatings;
+}
+
+const getStringForReview = () => {
+
+}
+
+const getStringForRating = () => {
+
+}
+
 
 // IIFE //
 
