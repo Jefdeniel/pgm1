@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Turret+Road:wght@400;500;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Turret Road", cursive;
+  font-size: 20px;
+  line-height: 1.52;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Turret Road", cursive;
+  font-size: 3rem;
+}
+
+.tag-cloud {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.tag-cloud__word {
+  background: rgba(0, 0, 0, 0.92);
+  color: rgba(255, 255, 255, 1);
+  left: 0;
+  position: absolute;
+  top: 0;
+}

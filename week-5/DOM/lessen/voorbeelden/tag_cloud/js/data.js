@@ -1,0 +1,18 @@
+const tagCloudData = [
+  "Angular",
+  "Apollo",
+  "CSS",
+  "Express",
+  "GraphQL",
+  "HTML",
+  "JavaScript",
+  "MongoDb",
+  "MySQL",
+  "Node.js",
+  "PHP",
+  "React",
+  "SQLite",
+  "Svelte",
+  "Three.js",
+  "Vue",
+];
