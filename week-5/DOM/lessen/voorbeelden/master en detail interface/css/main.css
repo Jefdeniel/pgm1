@@ -1,0 +1,67 @@
+html,
+body {
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.boxes {
+  --size: 3rem;
+  --size-lg: 12rem;
+}
+
+.boxes .boxes__box {
+  background-color: hsla(120, 100%, 30%, 0.5);
+  border-radius: 0.25rem;
+  border: 2px solid black;
+  box-sizing: border-box;
+  font-size: 1.25rem;
+  height: var(--size);
+  line-height: var(--size);
+  margin: 0.25rem;
+  text-align: center;
+  width: var(--size);
+}
+
+.boxes .boxes__box:hover {
+  background-color: hsl(120, 100%, 40%);
+  cursor: pointer;
+}
+
+.boxes .boxes__box--selected {
+  position: relative;
+  background-color: hsl(120, 100%, 30%);
+  color: white;
+  font-weight: 900;
+  margin: var(--size, 0) auto 0;
+  font-size: 92px;
+  height: var(--size-lg);
+  line-height: var(--size-lg);
+  text-align: center;
+  width: var(--size-lg);
+}
+
+.boxes .boxes__box--selected .boxes__clicks {
+  --size: 1rem;
+  background-color: black;
+  color: white;
+  display: block;
+  font-size: var(--size);
+  font-weight: 900;
+  height: var(--size);
+  line-height: var(--size);
+  padding: 0.5rem;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+}
+
+.boxes .boxes__box--selected .box__value {
+}
+
+.boxes .boxes__list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
