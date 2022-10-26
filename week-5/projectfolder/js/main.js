@@ -1,7 +1,7 @@
-function fetchData() {
+function fetchData () {
   const data = [
     {
-      firstName: "Philippe",
+      firstName: 'Philippe',
     },
   ];
   return data;
