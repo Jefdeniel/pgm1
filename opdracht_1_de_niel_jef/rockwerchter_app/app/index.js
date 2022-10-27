@@ -1,6 +1,6 @@
 const lineup = [
   {
-    id: 1,
+    id: "7b3dac13-c0ed-49e3-8f06-34fb3c5d1b83",
     band: {
       name: "Pearl Jam",
       synopsis: "Pearl Jam stelt zijn volledige zomertournee 2021 uit naar de zomer van 2022. Het hele tourschema is ineens ook bekendgemaakt. En zo kent Rock Werchter 2022 zijn eerste naam. Op donderdag 30 juni 2022 is Pearl Jam de headliner op de openingsdag van het festival.",
@@ -31,22 +31,23 @@ const lineup = [
     place: {
       name:"Main Stage",
     },
-    from: "23.00",
-    to: "23.00",
+    // Via currentMillis system.currentTimeMillis() 23.00 tot 23.30 omgezet to miliseconds since epoch
+    from: 1656622800000,
+    to: 1656624600000,
     isHeadliner: true,
     reviews: [
       {
-        rating: "9", 
+        rating: 9, 
         comment: "First of all, wow! The show immediately grabs you with its first couple of scenes, letting you know that this show is going to have a more adult tone. Seeing the workings of everyday people in the galaxy, the perspective of an imperial loyalist, and a thief making his way through the galaxy is so thrilling and exciting. The big and little details you get out of all the varying cultures on different planets allows you to completely melt into and engross yourself in the Star Wars galaxy, which is what many of us love so much.", 
         reviewedAt: "⭐⭐⭐⭐⭐⭐⭐⭐⭐",
       },
       {
-        rating: "8", 
+        rating: 8, 
         comment: "Andor has proven to be my favorite of the Star Wars Disney+ series, because it simply provides the basics of storytelling. Characters have motivation and personality, the dialogue is smart and snappy, and the stakes feel personal and real. The production team has also done a wonderful job creating a world that looks and sounds blue collar - no Jedi or Sith, just billions of working persons trying to make a living and simply get by. All the flash of Star Wars - the lightsaber fights, space battles and blaster fights, come second to simply telling a decent story. And for that alone, I think Andor is a step in the right direction.", 
         reviewedAt: "⭐⭐⭐⭐⭐⭐⭐⭐",
       },
       {
-        rating: "8", 
+        rating: 8, 
         comment: "I Hope we could see more like this in the future... Disney have some problems with storylines from old characters but the news stories like mandalorian they nailed it... Please make this tone for the rest of the franchise. Star Wars should be a grown-up thing like most of the fans that grow up with. Stop wasting our time with current political agenda and give us timeless stories we can remember like the first movies from George Lucas. Thanks you Disney for letting this happen.", 
         reviewedAt: "⭐⭐⭐⭐⭐⭐⭐⭐",
       }
@@ -65,7 +66,7 @@ const lineup = [
     ]
   },
   {
-    id: 2,
+    id: "5a680b43-464e-4490-a9e2-33aa21a628b5",
     band: {
       name: "Altın Gün",
       synopsis: "Jasper Verhulst koopt zich tijdens een Turkse toernee met de Nederlandse artiest Jacco Gardner arm in de tweedehands platenzaken in Istanbul. Hij zoekt en vindt er Turkse psychedelische folk uit de jaren 70. Klanken die uitgestorven zijn. Terug thuis wil Verhulst dat erfgoed nieuw leven inblazen. Hij zet een band op met twee zangers-muzikanten met Turkse roots en vier Nederlandse begeleiders. De naam is Altın Gün, Turks voor ‘gouden dag’. In november 2019 wordt hun tweede album ‘Gece’ genomineerd voor de Grammy Awards. Het levert uitnodigingen op voor grote festivals als Coachella en Fuji Rock. ‘Yol’ (2021) moest opgenomen worden in een idyllisch huis in Malibu. Het wordt helaas Amsterdam. De verplichte afzondering van de groepsleden laat zich horen in meer synthesizers en drummachines. Wat voor extra dansbaarheid zorgt", 
@@ -92,8 +93,9 @@ const lineup = [
     place: {
       name:"kLuB C",
     },
-    from: "14.50",
-    to: "14.50",
+        // Via currentMillis system.currentTimeMillis() 23.00 tot 23.30 omgezet to miliseconds since epoch
+    from: 1656593400000,
+    to: 1656593400000,
     isHeadliner: false,
     reviews: [
       {
@@ -157,8 +159,7 @@ const getStringForDate = () => {
 }
 
 const getStringForSocials = () => {
-  return "––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––\nSocials\––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––\",  
-  
+  return "––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––\nSocials\n––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––\",
 }
 
 
@@ -179,15 +180,8 @@ const getStringForRating = () => {
 
 }
 
+const getStringForComments = () => {
 
-// IIFE //
-
-// (function() {
-//   // statements
-// })();
-
-// // toe te passen functies: //
-// function showLineupInConsole() {
-// }
+}
 
 console.log(lineup)
