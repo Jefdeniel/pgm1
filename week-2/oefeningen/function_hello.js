@@ -6,10 +6,21 @@ Maak een bestand function_hello.js aan in de reeds aangemaakt folder week-2.
 Voorbeeld:
 sayHello(); // Hello World
 */
+
 function sayHello() {
-  return "Hello World";
+  let message = "";
+  message += "hello world\n";
+  message += "hello world\n";
+  console.log(message);
 }
-let m = sayHello();
+
+sayHello();
+
+function ZegHallo() {
+  return "Hallo wereld";
+}
+
+let m = ZegHallo();
 console.log(m);
-m = sayHello();
+m = ZegHallo();
 console.log(m);
