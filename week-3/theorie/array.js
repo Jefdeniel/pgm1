@@ -81,6 +81,84 @@ const students = [
     name: "Jef",
   },
 ];
-const output = students.map((elem) => elem.name).join("\n");
+// const output = students.map((elem) => elem.name).join("\n");
+// console.log(output);
+// console.log(output);
+
+//student.splice(2, 0, "Jef", "De Niel");
+// console.log(student);
+
+// Map () functie in an array object  => je kan een array transformeren naar een andere array
+
+const transformStudent = students.map(function (currentstudent) {
+  return currentstudent + "De Pauw";
+});
+console.log(transformStudent);
+
+const newStudentsArray = [];
+
+for (let i = 0; i < students.length[i]; i++) {
+  newStudentsArray.push(students[i] + "De Niel");
+}
+console.log(newStudentsArray);
+
+const programmeLines = [
+  {
+    name: "business and communication",
+    lecturer: {
+      initials: "CGR",
+      firstName: "Claire",
+      lastName: "Geeraerts",
+    },
+  },
+  {
+    name: "Applied information Technology",
+    lecturer: {
+      initials: "DDW",
+      firstName: "Dieter",
+      lastName: "Deweerd",
+    },
+  },
+  {
+    name: "Creative designen development",
+    lecturer: {
+      initials: "OPR",
+      firstName: "Olivier",
+      lastName: "test",
+    },
+  },
+  {
+    name: "Computer programming",
+    lecturer: {
+      initials: "TDP",
+      firstName: "Pim",
+      lastName: "de paepe",
+    },
+  },
+  {
+    name: "Workplace learning",
+    lecturer: {
+      initials: "DBU",
+      firstName: "Nicky",
+      lastName: "Mafliet",
+    },
+  },
+];
+
+let output = "";
+const transformedProgrammeLines = programmeLines.map((programmeLines) => {
+  return `
+  ${programmeLines.name} (${programmeLines.lecturer.initials})`;
+});
+output += transformedProgrammeLines.join("\n");
 console.log(output);
-console.log(output);
+
+const values = [10, 5, 16, 7];
+const transformedValues = values.map((v) => v * v);
+console.log(transformedValues);
+
+const sports = ["speel", "voet", "zwerk", "dodge", "hand", "basket"];
+
+const transformedSports = sports.map((sport) => `${sport}bal`);
+console.log(transformedSports.join("\n"));
+console.log(test);
