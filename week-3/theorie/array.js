@@ -83,3 +83,4 @@ const students = [
 ];
 const output = students.map((elem) => elem.name).join("\n");
 console.log(output);
+console.log(output);
