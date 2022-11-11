@@ -1,0 +1,6 @@
+* {
+  box-sizing: border-box;
+  /* paddings en border behoort tot visuele breedte en hoogte, anders moet je het gaan berekenen */
+  margin: 0;
+  padding: 0;
+}
