@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+  /* paddings en border behoort tot visuele breedte en hoogte, anders moet je het gaan berekenen */
+  margin: 0;
+  padding: 0;
+}
+
+.offcanvas__nav {
+  display: block;
+  height: 100vh;
+  width: 100vw;
+
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  background: black;
+  color: hsl(0, 0%, 80%);
+  transform: translateX(0) translateY(-100vh);
+  transition: all 286ms ease-out 0;
+}
+
+.offcanvas__nav.isopen {
+  transform: translateX(0) translateY(0);
+}
