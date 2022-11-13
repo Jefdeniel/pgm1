@@ -14,6 +14,9 @@
     },
     generateUI() {
       console.log("3. Generate user interface");
+      generateHtmlForSocials() => {
+        
+      }
     },
   };
   app.init();
