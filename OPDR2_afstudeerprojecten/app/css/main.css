@@ -1,0 +1,63 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  background
+}
+
+header {
+  text-align: right;
+  font-size: 1.5rem;
+  background-color: rgb(153,0,33);
+  color: rgb(245,230,233);
+  padding: 15px 20px 15px 0;
+}
+
+.intro { 
+  text-align: right;
+  font-size: 1.5rem;
+  background-color: rgb(235,0,50);
+  color: rgb(20,20,20);
+
+}
+
+.clock-current-year {
+  text-align: center;
+  font-size: 4rem;
+  background-color: rgb(20, 20, 20);
+  color: white;
+  padding: 50px 0;
+}
+
+.projects {
+  background-color: rgb(255,248,231);
+  height: 100vh;
+}
+
+.clock-next-year {
+  text-align: center;
+  font-size: 4rem;
+  background-color: rgb(20, 20, 20);
+  color: white;
+  padding: 50px 0;
+}
+
+.socials {
+  background-color: #000000;
+  color: white;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  /* Niet zeker of text align ook werkt voor icons ingevoerd door een script */
+  height: 150px;
+}
+
+footer {
+  background-color: #000000;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  border-top: solid 1px gray;
+}
