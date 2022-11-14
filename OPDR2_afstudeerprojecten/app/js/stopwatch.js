@@ -28,14 +28,39 @@ var x = setInterval(function () {
   );
   var seconds1 = Math.floor((distanceStopWatch % (60 * 1000)) / 1000);
 
+  // test
+
+  let a = "";
+  let b = "";
+  let c = "";
+  if (hours1 < 10) {
+    a = "0";
+  } else {
+    a = "";
+  }
+  if (minutes1 < 10) {
+    b = "0";
+  } else {
+    b = "";
+  }
+  if (seconds1 < 10) {
+    c = "0";
+  } else {
+    c = "";
+  }
+
   // dagen, uren, minuten en seconden samenvoegen
   var finalStopwatch =
     days1 +
     "days " +
-    hours1 +
+    hours1.toLocaleString("nl-BE", {
+      minimumIntegerDigits: 2,
+      useGrouping: true,
+    }) +
     "h " +
     minutes1 +
     "m " +
+    c +
     seconds1 +
     "s " +
     "\n running in current academic year 2022-2023";
@@ -60,21 +85,21 @@ var y = setInterval(function () {
 
   // Verschil berekenen tussen 2 datums
   const distanceCountdown = countdownDate - dateRightFormat; // Output 26600836183
-  const distanceRightFormat = distanceCountdown / (24 * 60 * 60 * 1000); // Output = XXX (days)
+  const distanceRightFormat = distanceCountdown / (24 * 360 * 1000); // Output = XXX (days)
 
   // dagen, uren, minuten en seconden berekenen
-  var days2 = Math.floor(distanceCountdown / (1000 * 60 * 60 * 24));
-  var hours2 = Math.floor(
+  let days2 = Math.floor(distanceCountdown / (1000 * 360 * 24));
+  let hours2 = Math.floor(
     (distanceCountdown % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000)
   );
-  var minutes2 = Math.floor(
+  let minutes2 = Math.floor(
     (distanceCountdown % (1000 * 60 * 60)) / (1000 * 60)
   );
-  var seconds2 = Math.floor((distanceCountdown % (1000 * 60)) / 1000);
+  let seconds2 = Math.floor((distanceCountdown % (1000 * 60)) / 1000);
 
   // dagen, uren, minuten en seconden samenvoegen
 
-  var finalTimer =
+  let finalTimer =
     days2 + "days " + hours2 + "h " + minutes2 + "m " + seconds2 + "s";
 
   const $clockNextYear = document.querySelector(".clock-next-year");
