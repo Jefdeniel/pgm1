@@ -47,7 +47,7 @@ var x = setInterval(function () {
       useGrouping: true,
     }) +
     "s " +
-    "running in current academic year 2022-23";
+    "";
   const $clockCurrentYear = document.querySelector(".clock-current-year");
   $clockCurrentYear.innerHTML = finalStopwatch;
   // console.log(finalStopwatch);
@@ -71,7 +71,7 @@ var y = setInterval(function () {
   const distanceRightFormat = distanceCountdown / (24 * 360 * 1000); // Output = XXX (days)
 
   // dagen, uren, minuten en seconden berekenen
-  let days2 = Math.floor(distanceCountdown / (1000 * 3600 * 24));
+  let days2 = Math.floor(distanceCountdown / (1000 * 60 * 60 * 24));
   let hours2 = Math.floor(
     (distanceCountdown % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000)
   );
