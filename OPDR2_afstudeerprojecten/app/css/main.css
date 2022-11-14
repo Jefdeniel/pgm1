@@ -6,6 +6,7 @@
 }
 
 header {
+
   text-align: right;
   font-size: 1.5rem;
   background-color: rgb(153,0,33);
@@ -14,12 +15,35 @@ header {
 }
 
 .intro { 
-  text-align: right;
-  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.75rem;
   background-color: rgb(235,0,50);
   color: rgb(20,20,20);
+  font-weight: 700;
 
 }
+
+.intro div {
+  animation-name: marquee;
+  animation-timing-function:cubic-bezier(0.075, 0.82, 0.165, 1);
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  font-size: 1.75rem;
+  color: rgb(20,20,20);
+}
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(100%)
+    }
+    100% {
+      transform: translateX(-100%)
+    }
+  }
+
 
 .clock-current-year {
   text-align: center;
@@ -27,6 +51,7 @@ header {
   background-color: rgb(20, 20, 20);
   color: white;
   padding: 50px 0;
+  font-weight: 600;
 }
 
 .projects {
@@ -40,6 +65,8 @@ header {
   background-color: rgb(20, 20, 20);
   color: white;
   padding: 50px 0;
+  font-weight: 600;
+
 }
 
 .socials {
@@ -60,4 +87,10 @@ footer {
   text-align: center;
   padding: 10px 0;
   border-top: solid 1px gray;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  margin-right: 25px;
 }

@@ -14,10 +14,13 @@
     },
     generateUI() {
       console.log("3. Generate user interface");
-      generateHtmlForSocials() => {
-        
-      }
     },
   };
   app.init();
 })();
+
+// Footer text
+footerString =
+  "Copyright 2022 Associate Degree in Computer programming | Artevelde University of Applied Sciences | Disclaimer";
+const $footer = document.querySelector(".footer");
+$footer.append(footerString);
