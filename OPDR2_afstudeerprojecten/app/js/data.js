@@ -48,7 +48,7 @@ const events = [
 ];
 
 const $events = document.querySelector(".intro");
-$events.append(events);
+$events.append(events.map((e) => e.title).join(" - "));
 
 /* PROJECTS */
 
@@ -272,6 +272,6 @@ const socials = [
 ];
 
 const $socials = document.querySelector(".socials");
-$socials.append(socials);
+$socials.append(socials.map((e) => e.logo).join(""));
 
 // console.log(socials);

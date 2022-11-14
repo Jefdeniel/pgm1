@@ -1,14 +1,11 @@
 // #################### STOPWATCH #################### //
 
-// 325 days 19h 16m 14s
-// till next acadedmix year 2023-24
+// Datum naar waar we moeten aftellen
+const startDate = new Date(1663569900000); // Output = 2022-09-19T06:45:00.000Z
 
+// Huidige datum selecteren
 var x = setInterval(function () {
-  // Datum naar waar we moeten aftellen
-  const startDate = new Date(1663569900000); // Output = 2022-09-19T06:45:00.000Z
-  // Huidige datum selecteren
-  const dateStopwatchNow = new Date().getTime(); // Output (variabel) = 1668423635580
-  const dateRightFormat2 = new Date(dateStopwatchNow); // Output = 2022-11-14T09:34:16.517Z
+  const dateRightFormat2 = new Date(); // Output = 2022-11-14T09:34:16.517Z
 
   // Verschil berekenen tussen 2 datums
   const distanceStopWatch = dateRightFormat2 - startDate; // Output 26600836183
@@ -28,56 +25,42 @@ var x = setInterval(function () {
   );
   var seconds1 = Math.floor((distanceStopWatch % (60 * 1000)) / 1000);
 
-  // test
-
-  let a = "";
-  let b = "";
-  let c = "";
-  if (hours1 < 10) {
-    a = "0";
-  } else {
-    a = "";
-  }
-  if (minutes1 < 10) {
-    b = "0";
-  } else {
-    b = "";
-  }
-  if (seconds1 < 10) {
-    c = "0";
-  } else {
-    c = "";
-  }
-
   // dagen, uren, minuten en seconden samenvoegen
   var finalStopwatch =
-    days1 +
+    days1.toLocaleString("nl-BE", {
+      minimumIntegerDigits: 2,
+      useGrouping: true,
+    }) +
     "days " +
     hours1.toLocaleString("nl-BE", {
       minimumIntegerDigits: 2,
       useGrouping: true,
     }) +
     "h " +
-    minutes1 +
+    minutes1.toLocaleString("nl-BE", {
+      minimumIntegerDigits: 2,
+      useGrouping: true,
+    }) +
     "m " +
-    c +
-    seconds1 +
+    +seconds1.toLocaleString("nl-BE", {
+      minimumIntegerDigits: 2,
+      useGrouping: true,
+    }) +
     "s " +
-    "\n running in current academic year 2022-2023";
-
+    "running in current academic year 2022-23";
   const $clockCurrentYear = document.querySelector(".clock-current-year");
   $clockCurrentYear.innerHTML = finalStopwatch;
   // console.log(finalStopwatch);
-}, 1000);
+}, 500);
 
 // #################### COUNTDOWN #################### //
 
 // 325 days 19h 16m 14s
 // till next acadedmix year 2023-24
+const countdownDate = new Date(1695019500000); // Output = 2023-09-18T06:45:00.000Z
 
 var y = setInterval(function () {
   // Datum naar waar we moeten aftellen
-  const countdownDate = new Date(1695019500000); // Output = 2023-09-18T06:45:00.000Z
 
   // Huidige datum selecteren
   const dateCountdownNow = new Date().getTime();
@@ -88,7 +71,7 @@ var y = setInterval(function () {
   const distanceRightFormat = distanceCountdown / (24 * 360 * 1000); // Output = XXX (days)
 
   // dagen, uren, minuten en seconden berekenen
-  let days2 = Math.floor(distanceCountdown / (1000 * 360 * 24));
+  let days2 = Math.floor(distanceCountdown / (1000 * 3600 * 24));
   let hours2 = Math.floor(
     (distanceCountdown % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000)
   );
@@ -100,11 +83,30 @@ var y = setInterval(function () {
   // dagen, uren, minuten en seconden samenvoegen
 
   let finalTimer =
-    days2 + "days " + hours2 + "h " + minutes2 + "m " + seconds2 + "s";
+    days2.toLocaleString("nl-BE", {
+      minimumIntegerDigits: 2,
+      useGrouping: true,
+    }) +
+    "days " +
+    hours2.toLocaleString("nl-BE", {
+      minimumIntegerDigits: 2,
+      useGrouping: true,
+    }) +
+    "h " +
+    minutes2.toLocaleString("nl-BE", {
+      minimumIntegerDigits: 2,
+      useGrouping: true,
+    }) +
+    "m " +
+    seconds2.toLocaleString("nl-BE", {
+      minimumIntegerDigits: 2,
+      useGrouping: true,
+    }) +
+    "s";
 
   const $clockNextYear = document.querySelector(".clock-next-year");
   $clockNextYear.innerHTML = finalTimer;
 
   const extraStringCountdown = "\n till next academic year 2023-24";
   $clockNextYear.append(extraStringCountdown);
-}, 1000);
+}, 500);
