@@ -23,8 +23,8 @@ const events = [
   },
 ];
 
-// const $events = document.querySelector(".intro");
-// const eventsMarquee = $events.append(events.map((e) => e.title).join(" - "));
+const $events = document.querySelector(".intro");
+const eventsMarquee = $events.append(events.map((e) => e.title).join(" - "));
 
 /* PROJECTS */
 
@@ -222,35 +222,39 @@ const projects = [
 const socials = [
   {
     id: "website",
-    logo: "https://www.pngfind.com/pngs/m/433-4333068_website-icon-png-white-internet-transparent-png.png",
+    logo: "https://cdn2.iconfinder.com/data/icons/basic-thin-line-color/21/18-512.png",
     link: "http://www.pgm.gent",
   },
   {
     id: "linkedin",
-    logo: "https://pngset.com/images/linkedin-icon-white-text-logo-symbol-trademark-transparent-png-851740.png",
+    logo: "https://cdn-icons-png.flaticon.com/512/174/174857.png",
     link: "https://www.linkedin.com/company/28878545/admin/",
   },
   {
     id: "facebook",
-    logo: "https://spng.pngfind.com/pngs/s/381-3815873_want-to-keep-up-to-date-on-whats.png",
+    logo: "https://cdn.iconscout.com/icon/free/png-256/facebook-logo-2019-1597680-1350125.png",
     link: "https://www.facebook.com/Programmeren.ahs",
   },
   {
     id: "instagram",
-    logo: "https://imgur.com/gallery/rVXsjia",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Instagram_logo.png/768px-Instagram_logo.png",
     link: "https://www.instagram.com/programmeren.ahs/",
   },
   {
     id: "youtube",
-    logo: "https://imgur.com/gallery/geVBVwg",
+    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRntWPLkjyu6YirKdrq5opVLDF-3xFJbee6D0d4kUAOlpIdKfpBc2JqKlbK1uqvoiGHe5E&usqp=CAU",
     link: "https://www.youtube.com/channel/UCHly8VZULSMWEmvbPJNVtFA",
   },
 ];
 
-// const $socials = document.querySelector(".socials");
+const $socials = document.querySelector(".socials");
 
 const images = socials.map((social) => {
-  const img = document.createElement("img"); // <img></img>
-  img.src = social.logo;
-  return img;
+  const imgElement = document.createElement("img");
+  imgElement.src = social.logo;
+  return imgElement;
 });
+
+for (let img of images) {
+  $socials.append(img);
+}

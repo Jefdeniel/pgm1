@@ -66,15 +66,19 @@ marquee.intro div {
 }
 
 .socials {
-  background-color: #000000;
-  color: white;
-  
   display: flex;
-  justify-content: center;
+  background-color: #000000;
   align-items: center;
+  color: white;
+  padding: 15px 0;
+}
+
+img {
+  max-height: 100px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   
-  /* Niet zeker of text align ook werkt voor icons ingevoerd door een script */
-  height: 150px;
 }
 
 footer {
