@@ -48,3 +48,17 @@ footerString =
   "Copyright 2022 Associate Degree in Computer programming | Artevelde University of Applied Sciences | Disclaimer";
 const $footer = document.querySelector(".footer");
 $footer.append(footerString);
+
+// Socials
+
+const $socials = document.querySelector(".socials");
+
+const images = socials.map((social) => {
+  const imgElement = document.createElement("img");
+  imgElement.src = social.logo;
+  return imgElement;
+});
+
+for (let img of images) {
+  $socials.append(img);
+}

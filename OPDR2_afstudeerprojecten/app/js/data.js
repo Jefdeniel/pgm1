@@ -213,26 +213,38 @@ const projects = [
         name: "foto Firebase",
       },
     ],
-    screenshots: ["foto 1", "foto 2"],
+    screenshots: ["", "foto 2"],
   },
 ];
 
 const $projects = document.querySelector(".projects"); // Output: <div class="projects"></div>
 
 projects.forEach((project) => {
-  const projectElement = document.createElement("div");
-  projectElement.innerText =
-    project.screenshots[0] +
-    "\n" +
-    project.author.firstName +
-    " " +
-    project.author.lastName +
-    "\n" +
-    project.title;
-  $projects.append(projectElement);
-});
+  const projectDiv = document.createElement("div");
 
-console.log(project);
+  projectDiv.div = "test";
+
+  const projectImg = document.createElement("img");
+  project.screenshots[0];
+
+  const projectAuthor = document.createElement("h3");
+  projectAuthor.innerText =
+    project.author.firstName + " " + project.author.lastName;
+
+  const projectTitle = document.createElement("p");
+  projectTitle.innerText = project.title;
+
+  // const projectTechnologies = document.createElement("p");
+  // projectTitle.innerText = project.technologies.id;
+
+  projectDiv.append(
+    projectImg,
+    projectAuthor,
+    projectTitle
+    // projectTechnologies
+  );
+  $projects.append(projectDiv);
+});
 
 const socials = [
   {
