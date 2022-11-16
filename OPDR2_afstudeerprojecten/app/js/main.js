@@ -55,6 +55,7 @@ const $socials = document.querySelector(".socials");
 
 const images = socials.map((social) => {
   const imgElement = document.createElement("img");
+  imgElement.classList.add("img_socials");
   imgElement.src = social.logo;
   return imgElement;
 });
@@ -62,3 +63,5 @@ const images = socials.map((social) => {
 for (let img of images) {
   $socials.append(img);
 }
+
+imgElement.classList.add("img_socials");

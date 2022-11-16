@@ -52,7 +52,6 @@ marquee.intro div {
 
 .projects {
   background-color: rgb(255,248,231);
-  height: 100vh;
   display: flex;
   flex-wrap: wrap;
 }
@@ -63,12 +62,20 @@ marquee.intro div {
   padding: 10px;
   width: 200px;
   border-radius: 15px;
-  box-shadow: 5px 5px #dadadaa4 ;
-  height: fit-content;
-  min-height: 300px;
+  box-shadow: 5px 5px #dadadaa4;
+  height: 300px;
+  overflow: hidden;
 }
 
+.img_project {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  overflow: hidden;
 
+}
+
+/* STOPWATCH AND TIMER */ 
 
 .clock-next-year {
   text-align: center;
@@ -88,8 +95,8 @@ marquee.intro div {
   padding: 15px 0;
 }
 
-img {
-  max-height: 100px;
+.img_socials {
+  max-height: 75px;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -108,4 +115,10 @@ a {
   color: white;
   text-decoration: none;
   margin-right: 25px;
+}
+
+p {
+  font-size: 18px;
+  color: rgb(37, 37, 37);
+  margin-top: 5px;
 }

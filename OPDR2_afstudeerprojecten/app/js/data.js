@@ -47,7 +47,7 @@ const projects = [
         name: "foto NestJS",
       },
     ],
-    screenshots: ["foto 1", "foto 2"],
+    screenshots: ["screenshot_01.png", "screenshot_02.png"],
   },
   {
     id: "643bc8da-08a3-4a6c-82ad-5c314768cfb5",
@@ -67,7 +67,12 @@ const projects = [
         name: "foto firebase",
       },
     ],
-    screenshots: ["foto 1", "foto 2"],
+    screenshots: [
+      "screenshot_01.png",
+      "screenshot_02.png",
+      "screenshot_03.pgn",
+      "screenshot_04.pgn",
+    ],
   },
   {
     id: "d901a016-76bc-4625-a1c4-7d419627945c",
@@ -76,7 +81,7 @@ const projects = [
       "Een gebruiksvriendelijk en personaliseerbaar dashboard voor Tekst.ai",
     author: {
       firstName: "Jan",
-      lastName: "Deschaft",
+      lastName: "Deschacht",
     },
     technologies: [
       {
@@ -88,7 +93,12 @@ const projects = [
         name: "foto Strapi",
       },
     ],
-    screenshots: ["foto 1", "foto 2"],
+    screenshots: [
+      "screenshot_01.png",
+      "screenshot_02.png",
+      "screenshot_03.pgn",
+      "screenshot_04.pgn",
+    ],
   },
   {
     id: "c4f34e8f-adc9-4d3a-9aae-894b8e4ccb19",
@@ -109,7 +119,11 @@ const projects = [
         name: "foto firebase",
       },
     ],
-    screenshots: ["foto 1", "foto 2"],
+    screenshots: [
+      "screenshot_01.png",
+      "screenshot_02.png",
+      "screenshot_03.pgn",
+    ],
   },
   {
     id: "03ae957a-a73b-4a35-8ff1-83c3e4bcee25",
@@ -117,7 +131,7 @@ const projects = [
     synopsis:
       "Platform om kosten van een auto te bijhouden inclusief speech-to-text",
     author: {
-      firstName: "Jamie-Lee",
+      firstName: "JamieLee",
       lastName: "Hart",
     },
     technologies: [
@@ -130,7 +144,11 @@ const projects = [
         name: "foto Supabase",
       },
     ],
-    screenshots: ["foto 1", "foto 2"],
+    screenshots: [
+      "screenshot_01.png",
+      "screenshot_02.png",
+      "screenshot_03.pgn",
+    ],
   },
   {
     id: "c2fe4e78-6167-4be3-a40b-fc91ca123b2a",
@@ -138,7 +156,7 @@ const projects = [
     synopsis: "Mobiele (native) applicatie voor het tracken van cryptomunten",
     author: {
       firstName: "Aiden",
-      lastName: "Souffi",
+      lastName: "Soufi",
     },
     technologies: [
       {
@@ -150,7 +168,11 @@ const projects = [
         name: "foto Firebase",
       },
     ],
-    screenshots: ["foto 1", "foto 2"],
+    screenshots: [
+      "screenshot_01.png",
+      "screenshot_02.png",
+      "screenshot_03.pgn",
+    ],
   },
   {
     id: "14f230e8-46d2-4d3b-9318-47a83c95b3c8",
@@ -171,7 +193,11 @@ const projects = [
         name: "foto GraphQL",
       },
     ],
-    screenshots: ["foto 1", "foto 2"],
+    screenshots: [
+      "screenshot_01.png",
+      "screenshot_02.png",
+      "screenshot_03.pgn",
+    ],
   },
   {
     id: "3d8a578c-ef45-431d-a3df-12cdc36c8b79",
@@ -192,7 +218,12 @@ const projects = [
         name: "foto Firebase",
       },
     ],
-    screenshots: ["foto 1", "foto 2"],
+    screenshots: [
+      "screenshot_01.png",
+      "screenshot_02.png",
+      "screenshot_03.pgn",
+      "screenshot_04.pgn",
+    ],
   },
   {
     id: "27c22a24-4435-4182-8fa7-7ae6963182b8",
@@ -213,7 +244,11 @@ const projects = [
         name: "foto Firebase",
       },
     ],
-    screenshots: ["", "foto 2"],
+    screenshots: [
+      "screenshot_01.png",
+      "screenshot_02.png",
+      "screenshot_03.pgn",
+    ],
   },
 ];
 
@@ -225,13 +260,16 @@ projects.forEach((project) => {
   projectDiv.div = "test";
 
   const projectImg = document.createElement("img");
-  project.screenshots[0];
+  projectImg.classList.add("img_project");
+  projectImg.src = `./images/${project.author.lastName.toLowerCase()}${project.author.firstName.toLowerCase()}/${
+    project.screenshots[0]
+  }`;
 
-  const projectAuthor = document.createElement("h3");
+  const projectAuthor = document.createElement("p");
   projectAuthor.innerText =
     project.author.firstName + " " + project.author.lastName;
 
-  const projectTitle = document.createElement("p");
+  const projectTitle = document.createElement("h3");
   projectTitle.innerText = project.title;
 
   // const projectTechnologies = document.createElement("p");
