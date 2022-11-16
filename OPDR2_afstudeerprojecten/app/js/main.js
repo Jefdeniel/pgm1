@@ -43,7 +43,7 @@ nav.appendChild(navItem3);
 
 $firstHeader.appendChild(nav);
 
-// Footer text
+// Footer text //
 footerString =
   "Copyright 2022 Associate Degree in Computer programming | Artevelde University of Applied Sciences | Disclaimer";
 const $footer = document.querySelector(".footer");

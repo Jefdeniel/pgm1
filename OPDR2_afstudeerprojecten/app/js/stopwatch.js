@@ -9,10 +9,8 @@ var x = setInterval(function () {
 
   // Verschil berekenen tussen 2 datums
   const distanceStopWatch = dateRightFormat2 - startDate; // Output 26600836183
-  console.log(distanceStopWatch);
   const distanceStopwatchRightFormat =
     distanceStopWatch / (1000 * 60 * 60 * 24); // Output = XXX (days)
-  console.log(distanceStopwatchRightFormat);
 
   // dagen, uren, minuten en seconden berekenen
 
@@ -107,6 +105,6 @@ var y = setInterval(function () {
   const $clockNextYear = document.querySelector(".clock-next-year");
   $clockNextYear.innerHTML = finalTimer;
 
-  const extraStringCountdown = "\n till next academic year 2023-24";
-  $clockNextYear.append(extraStringCountdown);
+  // const extraStringCountdown = "\n till next academic year 2023-24";
+  // $clockNextYear.append(extraStringCountdown);
 }, 500);

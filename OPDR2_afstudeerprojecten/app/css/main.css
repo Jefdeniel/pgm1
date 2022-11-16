@@ -53,7 +53,22 @@ marquee.intro div {
 .projects {
   background-color: rgb(255,248,231);
   height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
 }
+
+.projects div {
+  background-color: white;
+  margin: 10px;
+  padding: 10px;
+  width: 200px;
+  border-radius: 15px;
+  box-shadow: 5px 5px #dadadaa4 ;
+  height: fit-content;
+  min-height: 300px;
+}
+
+
 
 .clock-next-year {
   text-align: center;
