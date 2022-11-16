@@ -14,36 +14,32 @@ header {
   padding: 15px 20px 15px 0;
 }
 
-.intro { 
+header a:hover {
+  color: gray;
+}
+
+marquee { 
+  height: 10vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  white-space: nowrap;
   font-size: 1.75rem;
   background-color: rgb(235,0,50);
   color: rgb(20,20,20);
   font-weight: 700;
+  animation-duration: infinite;
+  min-width: none;
 
 }
 
-.intro div {
-  animation-name: marquee;
-  animation-timing-function:cubic-bezier(0.075, 0.82, 0.165, 1);
-  animation-duration: 3s;
-  animation-iteration-count: infinite;
-  animation-direction: normal;
+marquee.intro div {
+  float: left;
   font-size: 1.75rem;
   color: rgb(20,20,20);
+  overflow: hidden;
+  clear: both;
 }
-
-  @keyframes marquee {
-    0% {
-      transform: translateX(100%)
-    }
-    100% {
-      transform: translateX(-100%)
-    }
-  }
-
 
 .clock-current-year {
   text-align: center;

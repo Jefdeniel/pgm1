@@ -1,27 +1,3 @@
-/* HEADING */
-
-const $firstHeader = document.querySelector(".header");
-console.log($firstHeader);
-// Place text for header into the div
-const nav = document.createElement("nav");
-
-const navItem1 = document.createElement("a");
-navItem1.href = "#";
-navItem1.innerText = "Projecten";
-nav.appendChild(navItem1);
-
-const navItem2 = document.createElement("a");
-navItem2.href = "#";
-navItem2.innerText = "Graduaat Programmeren";
-nav.appendChild(navItem2);
-
-const navItem3 = document.createElement("a");
-navItem3.href = "#";
-navItem3.innerText = "Programmeren";
-nav.appendChild(navItem3);
-
-$firstHeader.appendChild(nav);
-
 /* PROJECTS */
 
 /* EVENTS */
@@ -47,8 +23,8 @@ const events = [
   },
 ];
 
-const $events = document.querySelector(".intro");
-$events.append(events.map((e) => e.title).join(" - "));
+// const $events = document.querySelector(".intro");
+// const eventsMarquee = $events.append(events.map((e) => e.title).join(" - "));
 
 /* PROJECTS */
 
@@ -271,7 +247,10 @@ const socials = [
   },
 ];
 
-const $socials = document.querySelector(".socials");
-$socials.append(socials.map((e) => e.logo).join(""));
+// const $socials = document.querySelector(".socials");
 
-// console.log(socials);
+const images = socials.map((social) => {
+  const img = document.createElement("img"); // <img></img>
+  img.src = social.logo;
+  return img;
+});
