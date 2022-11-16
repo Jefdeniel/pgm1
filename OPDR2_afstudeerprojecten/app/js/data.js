@@ -256,6 +256,7 @@ const $projects = document.querySelector(".projects"); // Output: <div class="pr
 
 projects.forEach((project) => {
   const projectDiv = document.createElement("div");
+  projectDiv.classList.add("card");
 
   projectDiv.div = "test";
 
@@ -283,6 +284,30 @@ projects.forEach((project) => {
   );
   $projects.append(projectDiv);
 });
+
+// let card = document.getElementsByClassName("card"); // Output: alle 9 divs correct
+// let openCards = function() {
+//   let attribute = this.getAttribute(card);
+//   console.log("dit werkt");
+// };
+
+document.getElementsByClassName("card").addEventListener("click", displayCard);
+
+function displayCard() {
+  console.log("test");
+}
+
+const getCard = document.getElementsByClassName("card").forEach(() => {
+  getCard.addEventListener("click", (event) => {
+    console.log("test");
+  });
+});
+
+// const card = this.(project) => {
+//   $project.addEventListener("click", (ev) => {
+//     console.log("tst")
+//   })
+// }
 
 const socials = [
   {
