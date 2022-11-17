@@ -9,92 +9,115 @@
     },
     cacheElements() {
       console.log("2. cache the elements");
+      this.$firstHeader = document.querySelector(".header");
+      this.$events = document.querySelector(".intro");
+      this.$socials = document.querySelector(".socials");
+      this.$footer = document.querySelector(".footer");
+      // Datum naar waar we moeten aftellen
+      this.startDate = new Date(1663569900000); // Output = 2022-09-19T06:45:00.000Z
+      this.$clockCurrentYear = document.querySelector(".clock-current-year");
+      this.$clockCurrentYear.innerHTML = this.finalStopwatch;
     },
     generateUI() {
       console.log("3. Generate user interface");
+      this.generateUIForHeader();
+      this.generateUIForEvents();
+      this.generateUIforSocials();
+      this.generateUIForFooter();
+      this.generateUIForStopwatch();
+    },
+    generateUIForHeader() {
+      // Place text for header into the div
+      const nav = document.createElement("nav");
+      // Place item 1 in div
+      const navItem1 = document.createElement("a");
+      navItem1.href = "#";
+      navItem1.innerText = "Projecten";
+      nav.appendChild(navItem1);
+      // Place item 2 in div
+      const navItem2 = document.createElement("a");
+      navItem2.href = "#";
+      navItem2.innerText = "Graduaat Programmeren";
+      nav.appendChild(navItem2);
+      // Place item 3 in div
+      const navItem3 = document.createElement("a");
+      navItem3.href = "#";
+      navItem3.innerText = "Programmeren";
+      nav.appendChild(navItem3);
+
+      this.$firstHeader.appendChild(nav);
+    },
+    generateUIForEvents() {
+      const eventsMarquee = this.$events.append(
+        events.map((e) => e.title).join(" - ")
+      );
+    },
+    generateUIforSocials() {
+      const images = socials.map((social) => {
+        const imgElement = document.createElement("img");
+        imgElement.classList.add("img_socials");
+        imgElement.src = social.logo;
+        return imgElement;
+      });
+
+      for (let img of images) {
+        this.$socials.append(img);
+      }
+    },
+    generateUIForFooter() {
+      footerString =
+        "Copyright 2022 Associate Degree in Computer programming | Artevelde University of Applied Sciences | Disclaimer";
+      this.$footer.append(footerString);
+    },
+    generateUIForStopwatch() {
+      // Huidige datum selecteren
+      var x = setInterval(function () {
+        const dateRightFormat2 = new Date(); // Output = 2022-11-14T09:34:16.517Z
+
+        // Verschil berekenen tussen 2 datums
+        const distanceStopWatch = dateRightFormat2 - startDate; // Output 26600836183
+        const distanceStopwatchRightFormat =
+          distanceStopWatch / (1000 * 3600 * 24); // Output = XXX (days)
+
+        // dagen, uren, minuten en seconden berekenen
+
+        var days1 = Math.floor(distanceStopWatch / (24 * 3600 * 1000));
+        var hours1 = Math.floor(
+          (distanceStopWatch % (24 * 3600 * 1000)) / (3600 * 1000)
+        );
+        var minutes1 = Math.floor(
+          (distanceStopWatch % (1000 * 3600)) / (60 * 1000)
+        );
+        var seconds1 = Math.floor((distanceStopWatch % (60 * 1000)) / 1000);
+
+        // dagen, uren, minuten en seconden samenvoegen
+        var finalStopwatch =
+          days1.toLocaleString("nl-BE", {
+            minimumIntegerDigits: 2,
+            useGrouping: true,
+          }) +
+          "days " +
+          hours1.toLocaleString("nl-BE", {
+            minimumIntegerDigits: 2,
+            useGrouping: true,
+          }) +
+          "h " +
+          minutes1.toLocaleString("nl-BE", {
+            minimumIntegerDigits: 2,
+            useGrouping: true,
+          }) +
+          "m " +
+          +seconds1.toLocaleString("nl-BE", {
+            minimumIntegerDigits: 2,
+            useGrouping: true,
+          }) +
+          "s " +
+          "";
+      }, 500);
     },
   };
   app.init();
 })();
-
-/* HEADING */
-
-const $firstHeader = document.querySelector(".header");
-console.log($firstHeader);
-// Place text for header into the div
-const nav = document.createElement("nav");
-
-const navItem1 = document.createElement("a");
-navItem1.href = "#";
-navItem1.innerText = "Projecten";
-nav.appendChild(navItem1);
-
-const navItem2 = document.createElement("a");
-navItem2.href = "#";
-navItem2.innerText = "Graduaat Programmeren";
-nav.appendChild(navItem2);
-
-const navItem3 = document.createElement("a");
-navItem3.href = "#";
-navItem3.innerText = "Programmeren";
-nav.appendChild(navItem3);
-
-$firstHeader.appendChild(nav);
-
-// Intro //
-
-const $events = document.querySelector(".intro");
-const eventsMarquee = $events.append(events.map((e) => e.title).join(" - "));
-
-// #################### STOPWATCH #################### //
-
-// Datum naar waar we moeten aftellen
-const startDate = new Date(1663569900000); // Output = 2022-09-19T06:45:00.000Z
-
-// Huidige datum selecteren
-var x = setInterval(function () {
-  const dateRightFormat2 = new Date(); // Output = 2022-11-14T09:34:16.517Z
-
-  // Verschil berekenen tussen 2 datums
-  const distanceStopWatch = dateRightFormat2 - startDate; // Output 26600836183
-  const distanceStopwatchRightFormat = distanceStopWatch / (1000 * 3600 * 24); // Output = XXX (days)
-
-  // dagen, uren, minuten en seconden berekenen
-
-  var days1 = Math.floor(distanceStopWatch / (24 * 3600 * 1000));
-  var hours1 = Math.floor(
-    (distanceStopWatch % (24 * 3600 * 1000)) / (3600 * 1000)
-  );
-  var minutes1 = Math.floor((distanceStopWatch % (1000 * 3600)) / (60 * 1000));
-  var seconds1 = Math.floor((distanceStopWatch % (60 * 1000)) / 1000);
-
-  // dagen, uren, minuten en seconden samenvoegen
-  var finalStopwatch =
-    days1.toLocaleString("nl-BE", {
-      minimumIntegerDigits: 2,
-      useGrouping: true,
-    }) +
-    "days " +
-    hours1.toLocaleString("nl-BE", {
-      minimumIntegerDigits: 2,
-      useGrouping: true,
-    }) +
-    "h " +
-    minutes1.toLocaleString("nl-BE", {
-      minimumIntegerDigits: 2,
-      useGrouping: true,
-    }) +
-    "m " +
-    +seconds1.toLocaleString("nl-BE", {
-      minimumIntegerDigits: 2,
-      useGrouping: true,
-    }) +
-    "s " +
-    "";
-  const $clockCurrentYear = document.querySelector(".clock-current-year");
-  $clockCurrentYear.innerHTML = finalStopwatch;
-  // console.log(finalStopwatch);
-}, 500);
 
 // #################### COUNTDOWN #################### //
 
@@ -151,25 +174,3 @@ var y = setInterval(function () {
   // const extraStringCountdown = "\n till next academic year 2023-24";
   // $clockNextYear.append(extraStringCountdown);
 }, 500);
-
-// #################### FOOTER TEXT #################### //
-
-footerString =
-  "Copyright 2022 Associate Degree in Computer programming | Artevelde University of Applied Sciences | Disclaimer";
-const $footer = document.querySelector(".footer");
-$footer.append(footerString);
-
-// Socials
-
-const $socials = document.querySelector(".socials");
-
-const images = socials.map((social) => {
-  const imgElement = document.createElement("img");
-  imgElement.classList.add("img_socials");
-  imgElement.src = social.logo;
-  return imgElement;
-});
-
-for (let img of images) {
-  $socials.append(img);
-}
