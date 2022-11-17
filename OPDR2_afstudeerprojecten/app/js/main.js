@@ -13,10 +13,8 @@
       this.$events = document.querySelector(".intro");
       this.$socials = document.querySelector(".socials");
       this.$footer = document.querySelector(".footer");
-      // Datum naar waar we moeten aftellen
-      this.startDate = new Date(1663569900000); // Output = 2022-09-19T06:45:00.000Z
       this.$clockCurrentYear = document.querySelector(".clock-current-year");
-      this.$clockCurrentYear.innerHTML = this.finalStopwatch;
+      this.$clockNextYear = document.querySelector(".clock-next-year");
     },
     generateUI() {
       console.log("3. Generate user interface");
@@ -25,6 +23,7 @@
       this.generateUIforSocials();
       this.generateUIForFooter();
       this.generateUIForStopwatch();
+      this.GenerateUIForCountdown();
     },
     generateUIForHeader() {
       // Place text for header into the div
@@ -70,8 +69,10 @@
       this.$footer.append(footerString);
     },
     generateUIForStopwatch() {
+      // Datum naar waar we moeten aftellen
+      const startDate = new Date(1663569900000); // Output = 2022-09-19T06:45:00.000Z
       // Huidige datum selecteren
-      var x = setInterval(function () {
+      setInterval(() => {
         const dateRightFormat2 = new Date(); // Output = 2022-11-14T09:34:16.517Z
 
         // Verschil berekenen tussen 2 datums
@@ -81,17 +82,17 @@
 
         // dagen, uren, minuten en seconden berekenen
 
-        var days1 = Math.floor(distanceStopWatch / (24 * 3600 * 1000));
-        var hours1 = Math.floor(
+        const days1 = Math.floor(distanceStopWatch / (24 * 3600 * 1000));
+        const hours1 = Math.floor(
           (distanceStopWatch % (24 * 3600 * 1000)) / (3600 * 1000)
         );
-        var minutes1 = Math.floor(
+        const minutes1 = Math.floor(
           (distanceStopWatch % (1000 * 3600)) / (60 * 1000)
         );
-        var seconds1 = Math.floor((distanceStopWatch % (60 * 1000)) / 1000);
+        const seconds1 = Math.floor((distanceStopWatch % (60 * 1000)) / 1000);
 
         // dagen, uren, minuten en seconden samenvoegen
-        var finalStopwatch =
+        const finalStopwatch =
           days1.toLocaleString("nl-BE", {
             minimumIntegerDigits: 2,
             useGrouping: true,
@@ -113,64 +114,63 @@
           }) +
           "s " +
           "";
+        this.$clockCurrentYear.innerHTML = finalStopwatch;
+      }, 500);
+    },
+    GenerateUIForCountdown() {
+      // 325 days 19h 16m 14s
+      // till next acadedmix year 2023-24
+      const countdownDate = new Date(1695019500000); // Output = 2023-09-18T06:45:00.000Z
+
+      setInterval(() => {
+        // Huidige datum selecteren
+        const dateCountdownNow = new Date().getTime();
+        const dateRightFormat = new Date(dateCountdownNow); // Output = 2022-11-14T09:34:16.517Z
+
+        // Verschil berekenen tussen 2 datums
+        const distanceCountdown = countdownDate - dateRightFormat; // Output 26600836183
+        const distanceRightFormat = distanceCountdown / (24 * 3600 * 1000); // Output = XXX (days)
+
+        // dagen, uren, minuten en seconden berekenen
+        let days2 = Math.floor(distanceCountdown / (1000 * 3600 * 24));
+        let hours2 = Math.floor(
+          (distanceCountdown % (24 * 60 * 60 * 1000)) / (3600 * 1000)
+        );
+        let minutes2 = Math.floor(
+          (distanceCountdown % (1000 * 3600)) / (1000 * 60)
+        );
+        let seconds2 = Math.floor((distanceCountdown % (1000 * 60)) / 1000);
+
+        // dagen, uren, minuten en seconden samenvoegen
+
+        let finalTimer =
+          days2.toLocaleString("nl-BE", {
+            minimumIntegerDigits: 2,
+            useGrouping: true,
+          }) +
+          "days " +
+          hours2.toLocaleString("nl-BE", {
+            minimumIntegerDigits: 2,
+            useGrouping: true,
+          }) +
+          "h " +
+          minutes2.toLocaleString("nl-BE", {
+            minimumIntegerDigits: 2,
+            useGrouping: true,
+          }) +
+          "m " +
+          seconds2.toLocaleString("nl-BE", {
+            minimumIntegerDigits: 2,
+            useGrouping: true,
+          }) +
+          "s";
+
+        this.$clockNextYear.innerHTML = finalTimer;
+
+        const extraStringCountdown = "\n till next academic year 2023-24";
+        this.$clockNextYear.append(extraStringCountdown);
       }, 500);
     },
   };
   app.init();
 })();
-
-// #################### COUNTDOWN #################### //
-
-// 325 days 19h 16m 14s
-// till next acadedmix year 2023-24
-const countdownDate = new Date(1695019500000); // Output = 2023-09-18T06:45:00.000Z
-
-var y = setInterval(function () {
-  // Datum naar waar we moeten aftellen
-
-  // Huidige datum selecteren
-  const dateCountdownNow = new Date().getTime();
-  const dateRightFormat = new Date(dateCountdownNow); // Output = 2022-11-14T09:34:16.517Z
-
-  // Verschil berekenen tussen 2 datums
-  const distanceCountdown = countdownDate - dateRightFormat; // Output 26600836183
-  const distanceRightFormat = distanceCountdown / (24 * 3600 * 1000); // Output = XXX (days)
-
-  // dagen, uren, minuten en seconden berekenen
-  let days2 = Math.floor(distanceCountdown / (1000 * 3600 * 24));
-  let hours2 = Math.floor(
-    (distanceCountdown % (24 * 60 * 60 * 1000)) / (3600 * 1000)
-  );
-  let minutes2 = Math.floor((distanceCountdown % (1000 * 3600)) / (1000 * 60));
-  let seconds2 = Math.floor((distanceCountdown % (1000 * 60)) / 1000);
-
-  // dagen, uren, minuten en seconden samenvoegen
-
-  let finalTimer =
-    days2.toLocaleString("nl-BE", {
-      minimumIntegerDigits: 2,
-      useGrouping: true,
-    }) +
-    "days " +
-    hours2.toLocaleString("nl-BE", {
-      minimumIntegerDigits: 2,
-      useGrouping: true,
-    }) +
-    "h " +
-    minutes2.toLocaleString("nl-BE", {
-      minimumIntegerDigits: 2,
-      useGrouping: true,
-    }) +
-    "m " +
-    seconds2.toLocaleString("nl-BE", {
-      minimumIntegerDigits: 2,
-      useGrouping: true,
-    }) +
-    "s";
-
-  const $clockNextYear = document.querySelector(".clock-next-year");
-  $clockNextYear.innerHTML = finalTimer;
-
-  // const extraStringCountdown = "\n till next academic year 2023-24";
-  // $clockNextYear.append(extraStringCountdown);
-}, 500);

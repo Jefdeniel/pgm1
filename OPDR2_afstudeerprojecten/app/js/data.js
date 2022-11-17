@@ -286,7 +286,7 @@ const card = document.querySelectorAll(".card");
 
 card.forEach((card) => {
   card.addEventListener("click", (project) => {
-    const OpenCard = document.createElement("div");
+    const OpenCard = document.createElement("span");
     OpenCard.classList.add("open_card");
     $projects.append(OpenCard);
     OpenCard.append(cardAuthor);
