@@ -9,18 +9,15 @@ var x = setInterval(function () {
 
   // Verschil berekenen tussen 2 datums
   const distanceStopWatch = dateRightFormat2 - startDate; // Output 26600836183
-  const distanceStopwatchRightFormat =
-    distanceStopWatch / (1000 * 60 * 60 * 24); // Output = XXX (days)
+  const distanceStopwatchRightFormat = distanceStopWatch / (1000 * 3600 * 24); // Output = XXX (days)
 
   // dagen, uren, minuten en seconden berekenen
 
-  var days1 = Math.floor(distanceStopWatch / (24 * 60 * 60 * 1000));
+  var days1 = Math.floor(distanceStopWatch / (24 * 3600 * 1000));
   var hours1 = Math.floor(
-    (distanceStopWatch % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000)
+    (distanceStopWatch % (24 * 3600 * 1000)) / (3600 * 1000)
   );
-  var minutes1 = Math.floor(
-    (distanceStopWatch % (1000 * 60 * 60)) / (60 * 1000)
-  );
+  var minutes1 = Math.floor((distanceStopWatch % (1000 * 3600)) / (60 * 1000));
   var seconds1 = Math.floor((distanceStopWatch % (60 * 1000)) / 1000);
 
   // dagen, uren, minuten en seconden samenvoegen
@@ -66,7 +63,7 @@ var y = setInterval(function () {
 
   // Verschil berekenen tussen 2 datums
   const distanceCountdown = countdownDate - dateRightFormat; // Output 26600836183
-  const distanceRightFormat = distanceCountdown / (24 * 360 * 1000); // Output = XXX (days)
+  const distanceRightFormat = distanceCountdown / (24 * 3600 * 1000); // Output = XXX (days)
 
   // dagen, uren, minuten en seconden berekenen
   let days2 = Math.floor(distanceCountdown / (1000 * 60 * 60 * 24));

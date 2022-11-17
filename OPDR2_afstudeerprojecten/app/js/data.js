@@ -1,5 +1,3 @@
-/* PROJECTS */
-
 /* EVENTS */
 
 const events = [
@@ -22,9 +20,6 @@ const events = [
     link: "https://www.arteveldehogeschool.be/bij-ons-studeren/kom-kennismaken/infodagen",
   },
 ];
-
-const $events = document.querySelector(".intro");
-const eventsMarquee = $events.append(events.map((e) => e.title).join(" - "));
 
 /* PROJECTS */
 
@@ -236,7 +231,7 @@ const projects = [
     },
     technologies: [
       {
-        id: 9,
+        id: 7,
         name: "foto ReactJS",
       },
       {
@@ -274,7 +269,9 @@ projects.forEach((project) => {
   projectTitle.innerText = project.title;
 
   // const projectTechnologies = document.createElement("p");
-  // projectTitle.innerText = project.technologies.id;
+  // const testt = projectTechnologies.append(
+  //   projects.technologies.id.map((e) => e.technologies.id).join(" - ")
+  // );
 
   projectDiv.append(
     projectImg,
@@ -285,29 +282,18 @@ projects.forEach((project) => {
   $projects.append(projectDiv);
 });
 
-// let card = document.getElementsByClassName("card"); // Output: alle 9 divs correct
-// let openCards = function() {
-//   let attribute = this.getAttribute(card);
-//   console.log("dit werkt");
-// };
+const card = document.querySelectorAll(".card");
 
-document.getElementsByClassName("card").addEventListener("click", displayCard);
-
-function displayCard() {
-  console.log("test");
-}
-
-const getCard = document.getElementsByClassName("card").forEach(() => {
-  getCard.addEventListener("click", (event) => {
-    console.log("test");
+card.forEach((card) => {
+  card.addEventListener("click", (project) => {
+    const OpenCard = document.createElement("div");
+    OpenCard.classList.add("open_card");
+    $projects.append(OpenCard);
+    OpenCard.append(cardAuthor);
   });
 });
 
-// const card = this.(project) => {
-//   $project.addEventListener("click", (ev) => {
-//     console.log("tst")
-//   })
-// }
+// Socials list //
 
 const socials = [
   {
