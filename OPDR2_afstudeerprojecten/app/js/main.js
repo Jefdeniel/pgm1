@@ -3,6 +3,7 @@
     init() {
       console.log("1. Application Initialized");
       // Variables
+
       this.cacheElements();
       //Call the function generateUI
       this.generateUI();
@@ -51,6 +52,7 @@
     generateUIForEvents() {
       this.$events.append(events.map((e) => e.title).join(" - "));
     },
+
     generateUIForProjects() {
       projects.forEach((project) => {
         const projectDiv = document.createElement("div");
@@ -71,16 +73,18 @@
         const projectTitle = document.createElement("h3");
         projectTitle.innerText = project.title;
 
-        // const projectTechnologies = document.createElement("p");
-        // const testt = projectTechnologies.append(
-        //   projects.technologies.id.map((e) => e.technologies.id).join(" - ")
-        // );
+        // Stefaan: is dit een oen move ofnie?
+        const projectTechnologies = document.createElement("p");
+        const selected = project.technologies.find(
+          (e) => e.technologies == Number
+        );
+        projectTechnologies.innerText = selected;
 
         projectDiv.append(
           projectImg,
           projectAuthor,
-          projectTitle
-          // projectTechnologies
+          projectTitle,
+          projectTechnologies
         );
         this.$projects.append(projectDiv);
       });
@@ -89,10 +93,15 @@
 
       card.forEach((card) => {
         card.addEventListener("click", (project) => {
-          const OpenCard = document.createElement("span");
+          const OpenCard = document.createElement("div");
           OpenCard.classList.add("open_card");
-          $projects.append(OpenCard);
-          OpenCard.append(cardAuthor);
+          this.$projects.append(OpenCard);
+
+          const CardTitle = document.createElement("h3");
+          CardTitle.innerText = project.title;
+
+          this.openCard.append(CardTitle);
+          // console.log(CardTitle);
         });
       });
     },
@@ -136,6 +145,10 @@
         );
         const seconds1 = Math.floor((distanceStopWatch % (60 * 1000)) / 1000);
 
+        // const extraString = document.createElement("p");
+        // extraString.classList.add("extra_string");
+        // extraString.innerText = "running in current academic year 2022-23";
+
         // dagen, uren, minuten en seconden samenvoegen
         const finalStopwatch =
           days1.toLocaleString("nl-BE", {
@@ -157,8 +170,7 @@
             minimumIntegerDigits: 2,
             useGrouping: true,
           }) +
-          "s " +
-          "";
+          "s ";
         this.$clockCurrentYear.innerHTML = finalStopwatch;
       }, 500);
     },
