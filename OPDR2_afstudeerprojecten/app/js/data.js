@@ -247,52 +247,6 @@ const projects = [
   },
 ];
 
-const $projects = document.querySelector(".projects"); // Output: <div class="projects"></div>
-
-projects.forEach((project) => {
-  const projectDiv = document.createElement("div");
-  projectDiv.classList.add("card");
-
-  projectDiv.div = "test";
-
-  const projectImg = document.createElement("img");
-  projectImg.classList.add("img_project");
-  projectImg.src = `./images/${project.author.lastName.toLowerCase()}${project.author.firstName.toLowerCase()}/${
-    project.screenshots[0]
-  }`;
-
-  const projectAuthor = document.createElement("p");
-  projectAuthor.innerText =
-    project.author.firstName + " " + project.author.lastName;
-
-  const projectTitle = document.createElement("h3");
-  projectTitle.innerText = project.title;
-
-  // const projectTechnologies = document.createElement("p");
-  // const testt = projectTechnologies.append(
-  //   projects.technologies.id.map((e) => e.technologies.id).join(" - ")
-  // );
-
-  projectDiv.append(
-    projectImg,
-    projectAuthor,
-    projectTitle
-    // projectTechnologies
-  );
-  $projects.append(projectDiv);
-});
-
-const card = document.querySelectorAll(".card");
-
-card.forEach((card) => {
-  card.addEventListener("click", (project) => {
-    const OpenCard = document.createElement("span");
-    OpenCard.classList.add("open_card");
-    $projects.append(OpenCard);
-    OpenCard.append(cardAuthor);
-  });
-});
-
 // Socials list //
 
 const socials = [

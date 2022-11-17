@@ -76,12 +76,11 @@ marquee.intro div {
 }
 
 .open_card {
-  height: 100vh;
+  height: 500px;
   width: 80vw;
   background: white ;
   position: fixed;
   right: 0;
-  top: 0;
   margin: 0, 50px;
   animation-delay: 2s;
 }

@@ -11,6 +11,7 @@
       console.log("2. cache the elements");
       this.$firstHeader = document.querySelector(".header");
       this.$events = document.querySelector(".intro");
+      this.$projects = document.querySelector(".projects");
       this.$socials = document.querySelector(".socials");
       this.$footer = document.querySelector(".footer");
       this.$clockCurrentYear = document.querySelector(".clock-current-year");
@@ -20,6 +21,7 @@
       console.log("3. Generate user interface");
       this.generateUIForHeader();
       this.generateUIForEvents();
+      this.generateUIForProjects();
       this.generateUIforSocials();
       this.generateUIForFooter();
       this.generateUIForStopwatch();
@@ -47,9 +49,52 @@
       this.$firstHeader.appendChild(nav);
     },
     generateUIForEvents() {
-      const eventsMarquee = this.$events.append(
-        events.map((e) => e.title).join(" - ")
-      );
+      this.$events.append(events.map((e) => e.title).join(" - "));
+    },
+    generateUIForProjects() {
+      projects.forEach((project) => {
+        const projectDiv = document.createElement("div");
+        projectDiv.classList.add("card");
+
+        projectDiv.div = "test";
+
+        const projectImg = document.createElement("img");
+        projectImg.classList.add("img_project");
+        projectImg.src = `./images/${project.author.lastName.toLowerCase()}${project.author.firstName.toLowerCase()}/${
+          project.screenshots[0]
+        }`;
+
+        const projectAuthor = document.createElement("p");
+        projectAuthor.innerText =
+          project.author.firstName + " " + project.author.lastName;
+
+        const projectTitle = document.createElement("h3");
+        projectTitle.innerText = project.title;
+
+        // const projectTechnologies = document.createElement("p");
+        // const testt = projectTechnologies.append(
+        //   projects.technologies.id.map((e) => e.technologies.id).join(" - ")
+        // );
+
+        projectDiv.append(
+          projectImg,
+          projectAuthor,
+          projectTitle
+          // projectTechnologies
+        );
+        this.$projects.append(projectDiv);
+      });
+
+      const card = document.querySelectorAll(".card");
+
+      card.forEach((card) => {
+        card.addEventListener("click", (project) => {
+          const OpenCard = document.createElement("span");
+          OpenCard.classList.add("open_card");
+          $projects.append(OpenCard);
+          OpenCard.append(cardAuthor);
+        });
+      });
     },
     generateUIforSocials() {
       const images = socials.map((social) => {
