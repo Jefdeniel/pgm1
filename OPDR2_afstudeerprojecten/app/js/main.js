@@ -73,7 +73,7 @@
         const projectTitle = document.createElement("h3");
         projectTitle.innerText = project.title;
 
-        // Stefaan: is dit een oen move ofnie?
+        // aan stefaan vragen: dom of niet?
         const projectTechnologies = document.createElement("p");
         const selected = project.technologies.find(
           (e) => e.technologies == Number
